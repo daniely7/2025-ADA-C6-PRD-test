@@ -1,0 +1,51 @@
+name: 🧪 테스트 코드 작성
+description: 신규 테스트 코드 작성 또는 기존 테스트 코드 갱신 시 사용합니다.
+title: "🧪 Test: "
+labels: ["Test"]
+body:
+  - type: textarea
+    id: test-target
+    attributes:
+      label: 🎯 테스트 대상
+      description: 어떤 모듈, 기능, 클래스, 또는 컴포넌트를 테스트할 것인지 구체적으로 작성해주세요.
+      placeholder: |
+        ex) TranslationService.swift
+        ex) OCRViewModel / SpeechRecognitionManager
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-task
+    attributes:
+      label: 🧩 테스트 작업 내용
+      description: 어떤 테스트를 작성하거나 수정해야 하는지 기입해주세요.
+      value: "- [ ] "
+      placeholder: |
+        - [ ] TranslationService의 번역 API 응답 테스트 추가
+        - [ ] SpeechRecognitionManager의 에러 처리 로직 테스트
+    validations:
+      required: true
+
+  - type: dropdown
+    id: test-type
+    attributes:
+      label: 🧪 테스트 유형
+      description: 어떤 유형의 테스트를 수행하는지 선택해주세요.
+      options:
+        - 단위 테스트 (Unit Test)
+        - 통합 테스트 (Integration Test)
+        - UI 테스트 (UITest)
+        - 스냅샷 테스트 (Snapshot Test)
+        - 기타 (Other)
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: ✅ 예상 결과
+      description: 테스트가 성공적으로 통과했을 때 기대되는 결과를 간략히 작성해주세요.
+      placeholder: |
+        - 모든 번역 요청이 정상적으로 응답을 반환한다.
+        - 음성 인식 중 오류 발생 시 재시도 로직이 정상 작동한다.
+
